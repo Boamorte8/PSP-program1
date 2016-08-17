@@ -23,14 +23,22 @@ public class Statistic {
 		return mean;
 	}
 
-	public float getStandarDeviation(int[] numbers) {
-		// TODO Auto-generated method stub
-		return 0;
+	public double getStandarDeviation(int[] numbers) {
+
+		float standarDeviation = 0;
+		float variance = getVariance(numbers);
+		standarDeviation = (float) Math.sqrt(variance);
+		return standarDeviation;
 	}
 
 	public float getVariance(int[] numbers) {
-		// TODO Auto-generated method stub
-		return (float) 8.6;
+		float mean = getMean(numbers);
+		float variance = 0;
+		for (int i = 0; i < numbers.length; i++) {
+			variance += Math.pow(numbers[i]-mean, 2);
+		}
+		variance = variance/numbers.length;
+		return variance;
 	}
 	
 	

@@ -31,17 +31,17 @@ public class EstadisticaTest {
 	@Test
 	public void getStandarDeviation(){
 		Statistic statistic = new Statistic();
-		int[] numbers = {7,4,65,35,2,66};
-		float standarDeviation  = statistic.getStandarDeviation(numbers);
-		assertEquals("Its not the expected standar deviation", 5.66, standarDeviation, 0.01);
+		int[] numbers = {160,591,114,229,230,270,128,1657,624,1503};
+		double standarDeviation  = statistic.getStandarDeviation(numbers);
+		assertEquals("Its not the expected standar deviation", 542.67, standarDeviation, 0.01);
 	}
 	
 	@Test
 	public void getVariance(){
 		Statistic statistic = new Statistic();
-		int[] numbers = {7,4,65,35,2,66};
+		int[] numbers = {160,591,114,229,230,270,128,1657,624,1503};
 		float variance  = statistic.getVariance(numbers);
-		assertEquals("Its not the expected variance", 8.6, variance, 0.01);
+		assertEquals("Its not the expected variance", 294493.24, variance, 0.1);
 	}
 	
 
