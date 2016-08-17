@@ -26,7 +26,6 @@ public class EstadisticaTest {
 		assertEquals("Is not the media expected. ", 60.32, mean, 0.1);
 	}
 	
-	
 
 	@Test
 	public void getStandarDeviation(){

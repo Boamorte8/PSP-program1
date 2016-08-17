@@ -1,8 +1,7 @@
 
 public class Statistic {
 
-	public float getMean(int[] numbers) {
-
+	public float getMean(float[] numbers) {
 		float sum = (float) 0.0;
 		float mean = (float) 0.0;
 		for (int i = 0; i < numbers.length; i++) {
@@ -12,19 +11,13 @@ public class Statistic {
 		return mean;
 	}
 	
-	public float getMean(float[] numbers) {
-
-		float sum = (float) 0.0;
-		float mean = (float) 0.0;
-		for (int i = 0; i < numbers.length; i++) {
-			sum += numbers[i];
-		}
-		mean = sum/numbers.length;
+	public float getMean(int[] numbers) {
+		float[] floatNumbers = castIntArraytoFloatArray(numbers);
+		float mean = getMean(floatNumbers);
 		return mean;
 	}
 
 	public double getStandarDeviation(int[] numbers) {
-
 		float standarDeviation = 0;
 		float variance = getVariance(numbers);
 		standarDeviation = (float) Math.sqrt(variance);
@@ -41,6 +34,13 @@ public class Statistic {
 		return variance;
 	}
 	
+	public float[] castIntArraytoFloatArray(int[] array){
+		float[] floatNumbers = new float[array.length];
+		for (int i = 0; i < array.length; i++) {
+			floatNumbers[i] = (float) Float.valueOf(array[i]);
+		}
+		return floatNumbers;
+	}
 	
 
 }
