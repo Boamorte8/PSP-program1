@@ -44,7 +44,7 @@ public class Statistic {
 //		for (int i = 0; i < numberList.length; i++) {
 //			variance += Math.pow(numberList[i]-mean, 2);
 //		}
-		variance = variance/numberList.size();
+		variance = variance/(numberList.size()-1);
 		return variance;
 	}
 	
