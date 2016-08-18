@@ -7,11 +7,11 @@ public class Statistic {
 	Scanner scanner = new Scanner(System.in);
 	
 	public static void main (String arg[]){
-
+		Statistic statistic = new Statistic();
+		statistic.getNumbers();
 	}
 
 	public float getMean( LinkedList<Float> numberList) {
-		
 		float sum = (float) 0.0;
 		float mean = (float) 0.0;
 		for (Float number : numberList) {
@@ -20,12 +20,6 @@ public class Statistic {
 		mean = sum/numberList.size();
 		return mean;
 	}
-	
-//	public float getMean(int[] numbers) {
-//		float[] floatNumbers = castIntArraytoFloatArray(numbers);
-//		float mean = getMean(floatNumbers);
-//		return mean;
-//	}
 
 	public float getStandarDeviation(LinkedList<Float> numberList) {
 		float standarDeviation = 0;
@@ -40,40 +34,22 @@ public class Statistic {
 		for (Float number : numberList) {
 			variance += Math.pow(number-mean, 2);
 		}
-		
-//		for (int i = 0; i < numberList.length; i++) {
-//			variance += Math.pow(numberList[i]-mean, 2);
-//		}
 		variance = variance/(numberList.size()-1);
 		return variance;
 	}
 	
-//	public float[] castIntArraytoFloatArray(int[] array){
-//		float[] floatNumbers = new float[array.length];
-//		for (int i = 0; i < array.length; i++) {
-//			floatNumbers[i] = (float) Float.valueOf(array[i]);
-//		}
-//		return floatNumbers;
-//	}
-	
-//	public void createLinkedList(){
-//		LinkedList<Float> list = new LinkedList<Float>();
-//		list.add(71.1f);
-//		list.add(78.1f);
-//		Iterator<Float> it = list.iterator();
-//		for (Float float1 : list) {
-//			System.out.println(float1);	
-//		}
-//		
-//	}
-	
 	public void getNumbers(){
 	    System.out.print("Ingrese los numeros separados por ',' (Ejm. 4,5,8,7) : \n");
 	    String input = scanner.nextLine();
-	    System.out.println("input : " + input);
-	    System.out.println("-----------\n");
+	    System.out.println(" \nLos numeros ingresados son: \n" + input);
+	    System.out.println("----------------------------------------\n");
 	    scanner.close();
-	    getListFromString(input);
+	    LinkedList<Float> numberList = getListFromString(input);
+	    float mean = getMean(numberList);
+	    float standarDeviation = getStandarDeviation(numberList);
+	    System.out.println("La media es: "+ mean);
+	    System.out.println("La Desviación Estandar es: "+ standarDeviation);
+	    
 	}
 	
 	public LinkedList<Float> getListFromString(String stringList){
@@ -90,10 +66,7 @@ public class Statistic {
 			System.out.print(float1+ " - ");	
 		}
 	}
-	
-	
-	
-	
+		
 	
 
 }
