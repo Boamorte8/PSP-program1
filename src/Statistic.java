@@ -6,11 +6,20 @@ public class Statistic {
 	
 	Scanner scanner = new Scanner(System.in);
 	
+	//After
+	//Before
+	//Setup
+	//Tear down
+	
 	public static void main (String arg[]){
 		Statistic statistic = new Statistic();
 		statistic.getNumbers();
 	}
 
+	public float getMean() {
+		return 0;
+	}
+	
 	public float getMean( LinkedList<Float> numberList) {
 		float sum = (float) 0.0;
 		float mean = (float) 0.0;
